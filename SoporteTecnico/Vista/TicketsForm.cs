@@ -75,41 +75,6 @@ namespace Vista
         private void GuardarButton_Click(object sender, EventArgs e)
         {
 
-            if (IdentidadTextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(IdentidadTextBox, "Ingrese DNI del cliente");
-                IdentidadTextBox.Focus();
-                return;
-            }
-            errorProvider1.Clear();
-            if (string.IsNullOrEmpty(TipoSoporteComboBox.Text))
-            {
-                errorProvider1.SetError(TipoSoporteComboBox, "Seleccione un tipo de Servicio");
-                TipoSoporteComboBox.Focus();
-                return;
-            }
-            errorProvider1.Clear();
-            if (string.IsNullOrEmpty(DescripcionSolicitudTextBox.Text))
-            {
-                errorProvider1.SetError(DescripcionSolicitudTextBox, "Ingrese la descripcion de la solicitud");
-                DescripcionSolicitudTextBox.Focus();
-                return;
-            }
-            if (string.IsNullOrEmpty(PrecioTextBox.Text))
-            {
-                errorProvider1.SetError(PrecioTextBox, "Ingrese un precio");
-                PrecioTextBox.Focus();
-                return;
-            }
-            errorProvider1.Clear();
-
-            if (string.IsNullOrEmpty(DescuentoTextBox.Text))
-            {
-                errorProvider1.SetError(DescuentoTextBox, "Si no hay descuento por favor ingresar valor: 0");
-                DescuentoTextBox.Focus();
-                return;
-            }
-
             Tickets miTicket = new Tickets();
             miTicket.Fecha = FechaDateTimePicker.Value;
             miTicket.CodigoUsuario = System.Threading.Thread.CurrentPrincipal.Identity.Name;
@@ -165,11 +130,12 @@ namespace Vista
         private void AgregarButton_Click(object sender, EventArgs e)
         {
 
-            if (IdentidadTextBox.Text == string.Empty)
+            if (string.IsNullOrEmpty(IdentidadTextBox.Text))
             {
                 errorProvider1.SetError(IdentidadTextBox, "Ingrese DNI del cliente");
                 IdentidadTextBox.Focus();
                 return;
+
             }
             errorProvider1.Clear();
             if (string.IsNullOrEmpty(TipoSoporteComboBox.Text))
@@ -199,6 +165,9 @@ namespace Vista
                 DescuentoTextBox.Focus();
                 return;
             }
+            errorProvider1.Clear();
+
+
 
 
             Tickets ticket = new Tickets();
@@ -244,6 +213,7 @@ namespace Vista
             PrecioTextBox.Enabled = false;
             DescuentoTextBox.Enabled = false;
             AgregarButton.Enabled = false;
+            GuardarButton.Enabled = true;
 
         }
 

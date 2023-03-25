@@ -344,6 +344,7 @@
             // 
             // GuardarButton
             // 
+            this.GuardarButton.Enabled = false;
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::Vista.Properties.Resources.aceptar__1_;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.ribbonControlAdv1 = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
+            this.backStageView1 = new Syncfusion.Windows.Forms.BackStageView(this.components);
+            this.backStage1 = new Syncfusion.Windows.Forms.BackStage();
+            this.backStageButton1 = new Syncfusion.Windows.Forms.BackStageButton();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.UsuariosToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -42,19 +45,16 @@
             this.NuevaFacturaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.SalirButton = new System.Windows.Forms.Button();
             this.tabbedMDIManager1 = new Syncfusion.Windows.Forms.Tools.TabbedMDIManager(this.components);
-            this.backStageView1 = new Syncfusion.Windows.Forms.BackStageView(this.components);
-            this.backStage1 = new Syncfusion.Windows.Forms.BackStage();
-            this.backStageButton1 = new Syncfusion.Windows.Forms.BackStageButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backStage1)).BeginInit();
+            this.backStage1.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
             this.toolStripEx2.SuspendLayout();
             this.toolStripTabItem3.Panel.SuspendLayout();
             this.toolStripEx4.SuspendLayout();
             this.toolStripTabItem4.Panel.SuspendLayout();
             this.toolStripEx1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.backStage1)).BeginInit();
-            this.backStage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControlAdv1
@@ -82,7 +82,7 @@
             this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem1;
+            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem3;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv1.Size = new System.Drawing.Size(1320, 189);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -91,6 +91,44 @@
             this.ribbonControlAdv1.Text = "ribbonControlAdv1";
             this.ribbonControlAdv1.ThemeName = "Office2016";
             this.ribbonControlAdv1.ThemeStyle.MoreCommandsStyle.PropertyGridViewBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            // 
+            // backStageView1
+            // 
+            this.backStageView1.BackStage = this.backStage1;
+            this.backStageView1.HostControl = null;
+            this.backStageView1.HostForm = this;
+            // 
+            // backStage1
+            // 
+            this.backStage1.AllowDrop = true;
+            this.backStage1.BackStagePanelWidth = 160;
+            this.backStage1.BeforeTouchSize = new System.Drawing.Size(1336, 649);
+            this.backStage1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.backStage1.ChildItemSize = new System.Drawing.Size(80, 140);
+            this.backStage1.Controls.Add(this.backStageButton1);
+            this.backStage1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.backStage1.ItemSize = new System.Drawing.Size(160, 40);
+            this.backStage1.Location = new System.Drawing.Point(0, 0);
+            this.backStage1.MinimumSize = new System.Drawing.Size(100, 20);
+            this.backStage1.Name = "backStage1";
+            this.backStage1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
+            this.backStage1.Size = new System.Drawing.Size(1336, 649);
+            this.backStage1.TabIndex = 4;
+            this.backStage1.ThemeName = "BackStage2016Renderer";
+            this.backStage1.Visible = false;
+            // 
+            // backStageButton1
+            // 
+            this.backStageButton1.Accelerator = "";
+            this.backStageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.backStageButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backStageButton1.Location = new System.Drawing.Point(25, 10);
+            this.backStageButton1.Name = "backStageButton1";
+            this.backStageButton1.Placement = Syncfusion.Windows.Forms.BackStageItemPlacement.Top;
+            this.backStageButton1.Size = new System.Drawing.Size(158, 31);
+            this.backStageButton1.TabIndex = 3;
+            this.backStageButton1.Text = "SALIR";
+            this.backStageButton1.Click += new System.EventHandler(this.backStageButton1_Click);
             // 
             // toolStripTabItem1
             // 
@@ -125,7 +163,7 @@
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx2.Size = new System.Drawing.Size(122, 104);
+            this.toolStripEx2.Size = new System.Drawing.Size(83, 104);
             this.toolStripEx2.TabIndex = 0;
             // 
             // UsuariosToolStripButton
@@ -260,43 +298,6 @@
             this.tabbedMDIManager1.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRenderer3D);
             this.tabbedMDIManager1.ThemeName = "TabRenderer3D";
             // 
-            // backStageView1
-            // 
-            this.backStageView1.BackStage = this.backStage1;
-            this.backStageView1.HostControl = null;
-            this.backStageView1.HostForm = this;
-            // 
-            // backStage1
-            // 
-            this.backStage1.AllowDrop = true;
-            this.backStage1.BackStagePanelWidth = 160;
-            this.backStage1.BeforeTouchSize = new System.Drawing.Size(1336, 649);
-            this.backStage1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.backStage1.ChildItemSize = new System.Drawing.Size(80, 140);
-            this.backStage1.Controls.Add(this.backStageButton1);
-            this.backStage1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.backStage1.ItemSize = new System.Drawing.Size(160, 40);
-            this.backStage1.Location = new System.Drawing.Point(4, 53);
-            this.backStage1.MinimumSize = new System.Drawing.Size(100, 59);
-            this.backStage1.Name = "backStage1";
-            this.backStage1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Blue;
-            this.backStage1.Size = new System.Drawing.Size(1336, 649);
-            this.backStage1.TabIndex = 4;
-            this.backStage1.ThemeName = "BackStage2016Renderer";
-            // 
-            // backStageButton1
-            // 
-            this.backStageButton1.Accelerator = "";
-            this.backStageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.backStageButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backStageButton1.Location = new System.Drawing.Point(0, 10);
-            this.backStageButton1.Name = "backStageButton1";
-            this.backStageButton1.Placement = Syncfusion.Windows.Forms.BackStageItemPlacement.Top;
-            this.backStageButton1.Size = new System.Drawing.Size(159, 39);
-            this.backStageButton1.TabIndex = 3;
-            this.backStageButton1.Text = "SALIR";
-            this.backStageButton1.Click += new System.EventHandler(this.backStageButton1_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -313,6 +314,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).EndInit();
             this.ribbonControlAdv1.ResumeLayout(false);
             this.ribbonControlAdv1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backStage1)).EndInit();
+            this.backStage1.ResumeLayout(false);
             this.toolStripTabItem1.Panel.ResumeLayout(false);
             this.toolStripTabItem1.Panel.PerformLayout();
             this.toolStripEx2.ResumeLayout(false);
@@ -325,8 +328,6 @@
             this.toolStripTabItem4.Panel.PerformLayout();
             this.toolStripEx1.ResumeLayout(false);
             this.toolStripEx1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.backStage1)).EndInit();
-            this.backStage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
